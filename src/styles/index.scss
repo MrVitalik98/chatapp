@@ -1,0 +1,31 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import "./loaders.scss";
+@import "./account.scss";
+@import "./sidebar-left.scss";
+@import "./sidebar-right.scss";
+@import "./auth.scss";
+@import "./settings.scss";
+@import "./modals.scss";
+@import "./chatroom.scss";
+@import "./404.scss";
+
+
+
+button, input, select, a, 
+button:focus, input:focus, select:focus, a:focus {
+  box-shadow: none !important;
+}
+
+#root {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+.dashboard {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 330px auto 330px;
+  color: #34344d;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

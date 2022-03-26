@@ -1,0 +1,191 @@
+@import "./notifications.scss";
+
+
+.sidebar-left {
+  padding-top: 15px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  border-right: 1px solid rgba(80, 82, 83, 0.2);
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    .avatar {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    .user-name {
+      margin: 5px 0 0;
+      font-size: 23px;
+    }
+
+    .user-age, .user-name {
+      text-align: center;
+    }
+
+    .user-age {
+      margin-bottom: 10px;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    max-width: 170px;
+    margin: 0 auto;
+    gap: 10px;
+
+    .btn {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50% !important;
+      position: relative;
+      padding: 0;
+
+      #newNotificationsCount {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+      }
+    }
+
+    .disabled {
+      background: #343A40;
+    }
+  }
+
+  .users {
+    margin-top: 15px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    padding-bottom: 5px;
+    grid-template: auto 50px 1fr / 1fr;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 80%;
+      height: 1px;
+      background: rgba(65, 65, 66, 0.2);
+      margin: 0 auto 15px;
+    }
+
+    form {
+      padding-top: 5px;
+      max-width: 255px;
+      margin: 0 auto;
+
+      input {
+        height: 45px;
+        border-radius: 15px 0 0 15px;
+        padding: 0 10px 0 20px;
+      }
+
+      button {
+        height: 45px;
+        border-radius: 0 15px 15px 0;
+        width: 60px; 
+      }
+    }
+
+    .user-list {
+      margin: 15px 15px 0 0;
+      overflow-y: auto;
+      display: flex;
+      position: relative;
+      gap: 4px;
+      flex-direction: column;
+      padding: 0 15px 0 20px;
+
+      .loader {
+        position: sticky;
+        background: none;
+      }
+
+      .noData {
+        margin: 0;
+        position: absolute;
+        top: 45%;
+        left: 40%;
+      }
+
+      .user-item {
+        display: flex;
+        gap: 18px;
+        padding: 10px 5px 10px 15px;
+        cursor: pointer;
+        border-radius: 7px;
+        background: #fff;
+        border: 1px solid rgba(49, 49, 49, 0.08);
+
+        .user-avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+
+        .user-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 3px;
+
+          .user-name {
+            font-size: 17px;
+            margin: 0;
+          }
+
+          .btn {
+            font-size: 13px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+          }
+
+          .btn-group {
+            display: flex; 
+            gap: 7px;
+
+            .btn {
+              @extend .btn;
+              width: auto;
+              border-radius: 0.25rem !important;
+            }
+          }
+        }
+
+        &:hover {
+          background: rgba(62, 157, 204, 0.1);
+        }
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background: rgba(222, 222, 226, 0.6);
+        border-radius: 60px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background: #484869;
+        border-radius: 60px;
+      }
+    }
+  }
+}

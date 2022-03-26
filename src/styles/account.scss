@@ -1,0 +1,93 @@
+.account {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .user-avatar {
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin-bottom: 15px;
+    border-radius: 50%;
+
+    .btn {
+      position: absolute;
+      bottom: 10px; 
+      right: 24px;
+      z-index: 996;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      padding: 5px 0;
+
+      #upload, #delete {
+        height: 32px;
+      }
+
+      #upload {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+
+      #upload:hover {
+        background: #138496;
+        color: #fff;
+      }
+
+      #delete:hover {
+        color: #fff;
+        background: #DC3545;
+      }
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .user-name, .user-email {
+    margin: 0;
+  }
+
+  .gender {
+    margin: 8px 0 0;
+    font-size: 16px;
+  }
+
+  .info {
+    display: flex;
+    gap: 20px;
+
+    p {
+      sup {
+        font-size: 14px;
+      }
+
+      .user-age, .numberOfChats {
+        font-size: 18px;
+      }
+    }
+  }
+}

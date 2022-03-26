@@ -1,0 +1,210 @@
+.sidebar-right {
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(14, 83, 117, 0.2);
+
+  h3 {
+    margin: 0 0 3px;
+    padding: 15px 0 0 20px;
+    font-size: 26px;
+  }
+
+  form {
+    padding-top: 5px;
+    max-width: 260px;
+    margin: 5px auto 0;
+
+    input {
+      height: 45px;
+      border-radius: 15px 0 0 15px;
+      padding: 0 10px 0 20px;
+    }
+
+    button {
+      height: 45px;
+      border-radius: 0 15px 15px 0;
+      width: 60px; 
+    }
+  }
+
+  .grid {
+    display: grid !important;
+    height: 100%;
+    overflow: hidden;
+    grid-template: auto 230px / 1fr;
+    
+    .chat-list, .online-users .online-user-list {
+      margin: 20px 15px 5px 0;
+      overflow-y: auto;
+      display: flex;
+      padding: 0 0 5px;
+      flex-direction: column;
+      gap: 15px;
+      position: relative;
+  
+      .loader {
+        position: sticky;
+        background: none;
+      }
+  
+      .user-item {
+        display: flex;
+        gap: 18px;
+        padding: 10px 20px;
+        margin-right: 12px;
+        cursor: pointer;
+        box-sizing: border-box;
+        border-radius: 0 15px 15px 0 !important;
+        position: relative;
+        border: 1px solid rgba(49, 49, 49, 0.08);
+  
+        &:hover {
+          background: rgba(62, 157, 204, 0.1);
+        }
+  
+        .avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+  
+        .user-info {
+          display: flex;
+          flex-direction: column;
+          padding-top: 8px;
+  
+          .user-name {
+            font-size: 18px;
+            margin: 0;
+          }
+  
+          .last-message {
+            font-size: 15px;
+            color: #808083;
+            margin: 0;
+            color: rgba(77, 75, 75, 0.9);
+            -webkit-line-clamp: 1; 
+            display: -webkit-box; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            max-height: 50px;
+            max-width: 136px;
+          }
+
+          .date {
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            font-size: 13px;
+            color: rgba(77, 75, 75, 0.7);
+          }
+
+          .numberOfUnreadMessages {
+            position: absolute;
+            bottom: 12px;
+            right: 22px;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              margin: 0;
+              color: #fff;
+              font-weight: 500;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+  
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+    
+      &::-webkit-scrollbar-track {
+        background: rgba(222, 222, 226, 0.6);
+        border-radius: 60px;
+      }
+    
+      &::-webkit-scrollbar-thumb {
+        background: #484869;
+        border-radius: 60px;
+      }
+    }
+  
+    .chat-list {
+      gap: 5px;
+  
+      .noData {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+      }
+  
+      .user-item {
+        border-left: 0;
+        border-radius: 0 7px 7px 0;
+        text-decoration: none;
+        color: #34344d;
+  
+        &.active-chatroom {
+          background: rgba(14, 83, 117, 0.1);
+          border: 0;
+        }
+      }
+    }
+  
+    .online-users .online-user-list {
+      margin: 10px 15px 0 10px;
+      height: 165px !important;
+      gap: 7px;
+  
+      .user-item {
+        border-radius: 0.5rem;
+  
+        .user-avatar {
+          position: relative;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+    
+          .light {
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            bottom: 3px;
+            right: 4px;
+            animation: onlineAnimate 2s infinite linear;
+          }
+        }
+      }
+  
+      .noData {
+        position: absolute;
+        top: 30%;
+        left: 22%;
+      }
+    }
+  }
+}
+
+@keyframes onlineAnimate {
+  0% {
+    background: #28A728;
+  }
+
+  50% {
+    background: #83ca83;
+  }
+
+  100% {
+    background: #28A728;
+  }
+}
