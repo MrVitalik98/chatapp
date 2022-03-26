@@ -26,7 +26,7 @@ const ChatItem = ({ chat: { _id: chatroomId, users, messages } }) => {
     hour_ = +hour_ < 10 ? '0' + hour_ : hour_
     minute_ = +minute_ < 10 ? '0' + minute_ : minute_
  
-    if(year === year_ && month === month_) {
+    if(year === year_ && month - 1 === month_) {
       if(day === day_) {
         time = `${hour_}:${minute_}`
       }

@@ -116,13 +116,13 @@ const Chatroom = () => {
 
       let title = `${day_} ${getMonth(month_)} ${year_}`
 
-      if(year_ === year && month === month_) {
-        if(day_ === day) {
-          title = 'today' 
+      if(+year_ === +year && +month - 1 === +month_) {
+        if(+day_ === +day) {
+          title = 'Today' 
         }
 
-        else if(day - day_ === 1) {
-          title = 'yesterday' 
+        if(+day - +day_ === 1) {
+          title = 'Yesterday' 
         }
       }
 

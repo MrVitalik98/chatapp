@@ -162,7 +162,7 @@
 
             .btn {
               @extend .btn;
-              width: auto;
+              min-width: 80px;
               border-radius: 0.25rem !important;
             }
           }

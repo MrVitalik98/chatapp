@@ -6,8 +6,7 @@ import { showAlert } from '../../app/features/alert/alertSlice'
 export const date = () => {
   return async dispatch => {
     try {
-      const { data: { ipAddress } } = await API.getIpAddress()
-      const { data } = await API.getDate(ipAddress)
+      const { data } = await API.getDate()
       dispatch(setDate(data))
     } 
     catch(e) {

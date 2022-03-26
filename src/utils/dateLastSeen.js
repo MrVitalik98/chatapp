@@ -32,7 +32,7 @@
 
 
     if(year_1 === year_2) {
-      if(month_1 === month_2) {
+      if(month_1 === month_2 - 1) {
         if(day_1 === day_2) {
           const hour_to_sec = (+hour_2 * 3600 + +minute_2 * 60 + +seconds_2) - (+hour_1 * 3600 + +minute_1 * 60 + +seconds_1)
 

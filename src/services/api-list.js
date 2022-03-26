@@ -14,12 +14,8 @@ const requestHeader = (token, params) => {
   return { headers }
 }
 
-
-// Get IP ADDRESS
-export const getIpAddress = () => axios.get('https://api.db-ip.com/v2/free/self')
-
 // Date API
-export const getDate = ipAddress => axios.get(`https://www.timeapi.io/api/Time/current/ip?ipAddress=${ipAddress}`)
+export const getDate = () => api.get('/time/current')
 
 // Auth API`s
 export const checkToken = token => api.get(`/auth/new-password?token=${token}`)

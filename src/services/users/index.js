@@ -66,7 +66,7 @@ export const loadMoreUsers = () => {
 export const getUserById = userId => {
   return async (dispatch, getState) => {
     const { token } = getState().user
-    const { datetime } = getState().date
+    const { dateTime } = getState().date
 
     dispatch(startFetchingUser())
 
@@ -74,7 +74,7 @@ export const getUserById = userId => {
       const { data } = await API.getUserById(token, userId)
       const { user, numberOfChats } = data
 
-      const age = new Date(datetime).getFullYear() - new Date(user?.birthday).getFullYear()
+      const age = new Date(dateTime).getFullYear() - new Date(user?.birthday).getFullYear()
       user && dispatch(fetchUserSuccedded({ ...user, age, numberOfChats }))
     }
     catch(e) {
