@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import PlanetLoader from './components/loaders/PlanetLoader'
-import Auth from './pages/Auth'
+const Auth = lazy(() => import('./pages/Auth'))
 const Dashboard = lazy(() => import('./pages/Dashboard'))
 const PageNotFound = lazy(() => import('./components/PageNotFound'))
 
